@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CenterViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface CenterViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+    NSMutableDictionary *objects;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

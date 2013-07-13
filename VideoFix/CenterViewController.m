@@ -8,6 +8,7 @@
 
 #import "CenterViewController.h"
 #import "MFSideMenuContainerViewController.h"
+#import "Requests.h"
 
 @interface CenterViewController ()
 
@@ -15,17 +16,14 @@
 
 @implementation CenterViewController
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-{
-    return YES;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     if(!self.title) self.title = @"Demo!";
-    
     [self setupMenuBarButtonItems];
+    
+    if(!objects)
+        objects = [[NSMutableDictionary alloc] initWithDictionary:[Requests getListTopics]];
 }
 
 - (MFSideMenuContainerViewController *)menuContainerViewController
@@ -73,17 +71,17 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [NSString stringWithFormat:@"Section %d", section];
+    return [NSString stringWithFormat:@"Section %@", [objects allKeys][section]];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return [objects count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return [[objects allKeys] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -94,8 +92,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"Item %d", indexPath.row];
+    NSArray *object = [objects allValues][indexPath.section];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", [object[indexPath.row] description]];
     
     return cell;
 }
