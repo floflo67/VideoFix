@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CenterViewController : UIViewController
+@interface CenterViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
