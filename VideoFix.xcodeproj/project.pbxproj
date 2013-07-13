@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5426F1C21790DF520024D5B4 /* Requests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5426F1C11790DF520024D5B4 /* Requests.m */; };
 		544605B21790D49B006B3438 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 544605B11790D49B006B3438 /* UIKit.framework */; };
 		544605B41790D49B006B3438 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 544605B31790D49B006B3438 /* Foundation.framework */; };
 		544605B61790D49B006B3438 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 544605B51790D49B006B3438 /* CoreGraphics.framework */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5426F1C01790DF520024D5B4 /* Requests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Requests.h; sourceTree = "<group>"; };
+		5426F1C11790DF520024D5B4 /* Requests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Requests.m; sourceTree = "<group>"; };
 		544605AE1790D49B006B3438 /* VideoFix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoFix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		544605B11790D49B006B3438 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		544605B31790D49B006B3438 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -63,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5426F1BF1790DF210024D5B4 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5426F1C01790DF520024D5B4 /* Requests.h */,
+				5426F1C11790DF520024D5B4 /* Requests.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		544605A51790D49B006B3438 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +107,7 @@
 		544605B71790D49B006B3438 /* VideoFix */ = {
 			isa = PBXGroup;
 			children = (
+				5426F1BF1790DF210024D5B4 /* API */,
 				544605C01790D49B006B3438 /* AppDelegate.h */,
 				544605C11790D49B006B3438 /* AppDelegate.m */,
 				544605DD1790D528006B3438 /* CenterViewController.h */,
@@ -202,6 +215,7 @@
 				544605DA1790D4CF006B3438 /* MFSideMenuContainerViewController.m in Sources */,
 				544605E01790D528006B3438 /* CenterViewController.m in Sources */,
 				544605E41790D673006B3438 /* SideMenuViewController.m in Sources */,
+				5426F1C21790DF520024D5B4 /* Requests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +330,7 @@
 				544605CD1790D49B006B3438 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
