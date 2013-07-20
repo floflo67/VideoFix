@@ -9,6 +9,7 @@
 #import "CenterViewController.h"
 #import "MFSideMenuContainerViewController.h"
 #import "Requests.h"
+#import "TopicsViewController.h"
 
 @interface CenterViewController ()
 
@@ -23,7 +24,7 @@
     [self setupMenuBarButtonItems];
     
     if(!objects)
-        objects = [[NSMutableDictionary alloc] initWithDictionary:[Requests getListTopics]];
+        objects = [[NSMutableDictionary alloc] initWithDictionary:[Requests getListSubjects]];
 }
 
 - (MFSideMenuContainerViewController *)menuContainerViewController
@@ -102,15 +103,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-    CenterViewController *demoController = [[CenterViewController alloc] initWithNibName:@"CenterViewController" bundle:nil];
-    demoController.title = [NSString stringWithFormat:@"Demo #%d-%d", indexPath.section, indexPath.row];
     
-    UINavigationController *navigationController = self.menuContainerViewController.centerViewController;
-    NSArray *controllers = [NSArray arrayWithObject:demoController];
-    navigationController.viewControllers = controllers;
-    [self.menuContainerViewController setMenuState:MFSideMenuStateClosed];
-     */
+    TopicsViewController *detailController = [[TopicsViewController alloc] initWithID:[([objects allValues][indexPath.section])[indexPath.row] objectForKey:@"ID"]];
+    detailController.title = [NSString stringWithFormat:@"Topic %@", [([objects allValues][indexPath.section])[indexPath.row] objectForKey:@"description"]];
+    [self.navigationController pushViewController:detailController animated:YES];     
 }
 
 @end
