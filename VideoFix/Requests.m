@@ -21,9 +21,24 @@
 {
     if(!_listTopics) {
         _listTopics = [[NSMutableDictionary alloc] init];
+        NSMutableDictionary *dictMercedes = [[NSMutableDictionary alloc] init];
+        [dictMercedes setValue:@"Mercedes" forKey:@"description"];
+        [dictMercedes setValue:@"001" forKey:@"ID"];
         
-        NSArray *carBrand = [NSArray arrayWithObjects:@"Mercedes", @"Ferrari", nil];
-        NSArray *ITBrand = [NSArray arrayWithObjects:@"Microsoft", @"Apple", nil];
+        NSMutableDictionary *dictMicrosoft = [[NSMutableDictionary alloc] init];
+        [dictMicrosoft setValue:@"Microsoft" forKey:@"description"];
+        [dictMicrosoft setValue:@"011" forKey:@"ID"];
+        
+        NSMutableDictionary *dictFerrari = [[NSMutableDictionary alloc] init];
+        [dictFerrari setValue:@"Ferrari" forKey:@"description"];
+        [dictFerrari setValue:@"002" forKey:@"ID"];
+        
+        NSMutableDictionary *dictApple = [[NSMutableDictionary alloc] init];
+        [dictApple setValue:@"Apple" forKey:@"description"];
+        [dictApple setValue:@"012" forKey:@"ID"];
+        
+        NSArray *carBrand = [NSArray arrayWithObjects:dictMercedes, dictFerrari, nil];
+        NSArray *ITBrand = [NSArray arrayWithObjects:dictMicrosoft, dictApple, nil];
         [_listTopics setObject:carBrand forKey:@"Car"];
         [_listTopics setObject:ITBrand forKey:@"IT"];
     }

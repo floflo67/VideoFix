@@ -93,7 +93,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     NSArray *object = [objects allValues][indexPath.section];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [object[indexPath.row] description]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", [object[indexPath.row] objectForKey:@"description"]];
     
     return cell;
 }
