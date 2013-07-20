@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TopicsViewController : UIViewController
+@interface TopicsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+    NSMutableArray *objects;
+}
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+-(id)initWithID:(NSString*)ID;
 
 @end
