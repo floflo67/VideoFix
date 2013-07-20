@@ -10,8 +10,10 @@
 
 @interface Requests : NSObject
 
-@property (nonatomic, strong) NSMutableDictionary *listTopics;
+@property (nonatomic, strong) NSMutableDictionary *listSubjects;
+@property (nonatomic, strong) NSMutableArray *listTopics;
 
-+(NSDictionary*)getListTopics;
++(NSDictionary*)getListSubjects;
++(NSArray*)getListTopicsForID:(NSString*)ID;
 
 @end

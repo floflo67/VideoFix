@@ -10,17 +10,16 @@
 
 @implementation Requests
 
-+ (NSDictionary*)getListTopics
++ (NSDictionary*)getListSubjects
 {
     Requests *req = [[Requests alloc] init];
-    return [req getListTopics];
-    
+    return [req getListSubjects];
 }
 
-- (NSDictionary*)getListTopics
+- (NSDictionary*)getListSubjects
 {
-    if(!_listTopics) {
-        _listTopics = [[NSMutableDictionary alloc] init];
+    if(!_listSubjects) {
+        _listSubjects = [[NSMutableDictionary alloc] init];
         NSMutableDictionary *dictMercedes = [[NSMutableDictionary alloc] init];
         [dictMercedes setValue:@"Mercedes" forKey:@"description"];
         [dictMercedes setValue:@"001" forKey:@"ID"];
@@ -39,8 +38,26 @@
         
         NSArray *carBrand = [NSArray arrayWithObjects:dictMercedes, dictFerrari, nil];
         NSArray *ITBrand = [NSArray arrayWithObjects:dictMicrosoft, dictApple, nil];
-        [_listTopics setObject:carBrand forKey:@"Car"];
-        [_listTopics setObject:ITBrand forKey:@"IT"];
+        [_listSubjects setObject:carBrand forKey:@"Car"];
+        [_listSubjects setObject:ITBrand forKey:@"IT"];
+    }
+    return _listSubjects;
+}
+
++ (NSArray*)getListTopicsForID:(NSString*)ID
+{
+    Requests *req = [[Requests alloc] init];
+    return [req getListTopicsForID:ID];
+}
+
+- (NSArray*)getListTopicsForID:(NSString*)ID
+{
+    if(!_listTopics) {
+        _listTopics = [[NSMutableArray alloc] init];
+        [_listTopics addObject:[NSString stringWithFormat:@"Topic 1 - %@", ID]];
+        [_listTopics addObject:[NSString stringWithFormat:@"Topic 2 - %@", ID]];
+        [_listTopics addObject:[NSString stringWithFormat:@"Topic 3 - %@", ID]];
+        [_listTopics addObject:[NSString stringWithFormat:@"Topic 4 - %@", ID]];
     }
     return _listTopics;
 }
