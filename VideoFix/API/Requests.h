@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSMutableDictionary *listSubjects;
 @property (nonatomic, strong) NSMutableArray *listTopics;
 
++(NSArray*)getListQuestions;
 +(NSDictionary*)getListSubjects;
 +(NSArray*)getListTopicsForID:(NSString*)ID;
 

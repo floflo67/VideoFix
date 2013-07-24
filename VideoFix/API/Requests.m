@@ -7,8 +7,14 @@
 //
 
 #import "Requests.h"
+#import "QuestionParser.h"
 
 @implementation Requests
+
++ (NSArray*)getListQuestions
+{
+    return [[[QuestionParser alloc] init] getQuestionsFromURL:@""];
+}
 
 + (NSDictionary*)getListSubjects
 {
