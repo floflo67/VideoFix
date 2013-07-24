@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CenterViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    NSMutableDictionary *objects;
+    NSArray *objects;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

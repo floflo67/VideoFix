@@ -10,6 +10,7 @@
 #import "MFSideMenuContainerViewController.h"
 #import "Requests.h"
 #import "TopicsViewController.h"
+#import "Question.h"
 
 @interface CenterViewController ()
 
@@ -24,7 +25,7 @@
     [self setupMenuBarButtonItems];
     
     if(!objects)
-        objects = [[NSMutableDictionary alloc] initWithDictionary:[Requests getListSubjects]];
+        objects = [[NSArray alloc] initWithArray:[Requests getListQuestions]];
 }
 
 - (MFSideMenuContainerViewController *)menuContainerViewController
@@ -70,19 +71,14 @@
 
 #pragma mark - UITableViewDataSource
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return [NSString stringWithFormat:@"Section %@", [objects allKeys][section]];
-}
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [objects count];
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[objects allKeys] count];
+    return [objects count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -93,20 +89,20 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    NSArray *object = [objects allValues][indexPath.section];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [object[indexPath.row] objectForKey:@"description"]];
+    Question *question = objects[indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", question.title];
     
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 
+/*
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     TopicsViewController *detailController = [[TopicsViewController alloc] initWithID:[([objects allValues][indexPath.section])[indexPath.row] objectForKey:@"ID"]];
     detailController.title = [NSString stringWithFormat:@"Topic %@", [([objects allValues][indexPath.section])[indexPath.row] objectForKey:@"description"]];
     [self.navigationController pushViewController:detailController animated:YES];     
-}
+}*/
 
 @end
