@@ -77,7 +77,7 @@
 				5426F1C01790DF520024D5B4 /* Requests.h */,
 				5426F1C11790DF520024D5B4 /* Requests.m */,
 			);
-			name = API;
+			path = API;
 			sourceTree = "<group>";
 		};
 		544605A51790D49B006B3438 = {
@@ -113,17 +113,12 @@
 			isa = PBXGroup;
 			children = (
 				5426F1BF1790DF210024D5B4 /* API */,
+				5480D55017A03C7F0069ABAC /* BarsViewController */,
+				5480D54F17A03C710069ABAC /* ViewController */,
 				544605C01790D49B006B3438 /* AppDelegate.h */,
 				544605C11790D49B006B3438 /* AppDelegate.m */,
-				544605DD1790D528006B3438 /* CenterViewController.h */,
-				544605DE1790D528006B3438 /* CenterViewController.m */,
-				544605DF1790D528006B3438 /* CenterViewController.xib */,
-				544605E21790D673006B3438 /* SideMenuViewController.h */,
-				544605E31790D673006B3438 /* SideMenuViewController.m */,
-				549C2C62179A5D81001E11D4 /* TopicsViewController.h */,
-				549C2C63179A5D81001E11D4 /* TopicsViewController.m */,
-				549C2C64179A5D81001E11D4 /* TopicsViewController.xib */,
 				544605B81790D49B006B3438 /* Supporting Files */,
+				5480D55117A03CBA0069ABAC /* Resources */,
 			);
 			path = VideoFix;
 			sourceTree = "<group>";
@@ -135,9 +130,6 @@
 				544605BA1790D49B006B3438 /* InfoPlist.strings */,
 				544605BD1790D49B006B3438 /* main.m */,
 				544605BF1790D49B006B3438 /* VideoFix-Prefix.pch */,
-				544605C31790D49B006B3438 /* Default.png */,
-				544605C51790D49B006B3438 /* Default@2x.png */,
-				544605C71790D49B006B3438 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -150,6 +142,38 @@
 				544605D91790D4CF006B3438 /* MFSideMenuContainerViewController.m */,
 			);
 			path = MFSideMenu;
+			sourceTree = "<group>";
+		};
+		5480D54F17A03C710069ABAC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				544605DD1790D528006B3438 /* CenterViewController.h */,
+				544605DE1790D528006B3438 /* CenterViewController.m */,
+				544605DF1790D528006B3438 /* CenterViewController.xib */,
+				549C2C62179A5D81001E11D4 /* TopicsViewController.h */,
+				549C2C63179A5D81001E11D4 /* TopicsViewController.m */,
+				549C2C64179A5D81001E11D4 /* TopicsViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5480D55017A03C7F0069ABAC /* BarsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				544605E21790D673006B3438 /* SideMenuViewController.h */,
+				544605E31790D673006B3438 /* SideMenuViewController.m */,
+			);
+			path = BarsViewController;
+			sourceTree = "<group>";
+		};
+		5480D55117A03CBA0069ABAC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				544605C31790D49B006B3438 /* Default.png */,
+				544605C51790D49B006B3438 /* Default@2x.png */,
+				544605C71790D49B006B3438 /* Default-568h@2x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
