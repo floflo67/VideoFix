@@ -10,4 +10,12 @@
 
 @interface QuestionParser : NSObject <NSXMLParserDelegate>
 
+@property (nonatomic, strong) NSDictionary *dict;
+@property (nonatomic, strong) NSMutableString *currentStringValue;
+@property (nonatomic, strong) NSString *currentStringKey;
+@property (nonatomic, strong) NSMutableArray *listQuestions;
+
+
+-(NSArray*)getQuestionsFromURL:(NSString *)path;
+
 @end
