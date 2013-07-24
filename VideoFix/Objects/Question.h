@@ -10,4 +10,17 @@
 
 @interface Question : NSObject
 
+@property (nonatomic, strong) NSString *IDQuestion;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *thumbnail;
+@property (nonatomic) BOOL isResolved;
+@property (nonatomic, strong) NSDate *timestamp;
+@property (nonatomic, strong) NSString *firstNameUser;
+@property (nonatomic, strong) NSString *lastNameUser;
+@property (nonatomic) NSInteger numberViews;
+@property (nonatomic) NSInteger numberThanks;
+@property (nonatomic) NSInteger numberAnswers;
+
+-(id)initWithDict:(NSDictionary*)dict;
+
 @end
