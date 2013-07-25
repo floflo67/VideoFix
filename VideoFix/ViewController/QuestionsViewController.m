@@ -63,17 +63,17 @@ static QuestionsViewController *sharedSingleton = nil;
     cell.labelThanks.text = [NSString stringWithFormat:@"%i Thanks", question.numberThanks];
     cell.labelViews.text = [NSString stringWithFormat:@"%i Views", question.numberViews];
     cell.labelTitle.text = question.title;
+
+    NSInteger timeInterval = [[NSDate new] timeIntervalSinceDate:question.timestamp] / 60;
+    NSString *timeFormat = @"minutes";
     
-    NSDate* date = [NSDate new];
-    NSTimeInterval distanceBetweenDates = [date timeIntervalSinceDate:question.timestamp];
-    NSInteger minutesBetweenDates = distanceBetweenDates / 60;
+    if(timeInterval > 60) {
+        timeInterval /= 60;
+        timeFormat = @"hours";
+    }
     
-    cell.labelTimeFrame = [NSString stringWithFormat:@"Asked %i minutes ago by %@", minutesBetweenDates, question.firstNameUser];
-    
-    UIImage *img = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:question.thumbnail]]];
-    cell.imageBackground.image = img;
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", question.title];
+    cell.labelTimeFrame.text = [NSString stringWithFormat:@"Asked %i %@ ago by %@", timeInterval, timeFormat, question.firstNameUser];
+    //cell.imageBackground.image = question.imageThumbnail;
     
     return cell;
 }
