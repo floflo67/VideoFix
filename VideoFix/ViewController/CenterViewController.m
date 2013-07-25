@@ -8,29 +8,29 @@
 
 #import "CenterViewController.h"
 #import "MFSideMenuContainerViewController.h"
-#import "Requests.h"
 #import "TopicsViewController.h"
-#import "Question.h"
-
-@interface CenterViewController ()
-
-@end
+#import "QuestionViewController.h"
 
 @implementation CenterViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if(!self.title) self.title = @"Demo!";
     [self setupMenuBarButtonItems];
-    
-    if(!objects)
-        objects = [[NSArray alloc] initWithArray:[Requests getListQuestions]];
+    [self loadQuestionsView];
 }
 
 - (MFSideMenuContainerViewController *)menuContainerViewController
 {
     return (MFSideMenuContainerViewController *)self.navigationController.parentViewController;
+}
+
+#pragma mark - CenterViewController
+
+- (void)loadQuestionsView
+{
+    [self.viewContent addSubview:[QuestionViewController getSingleton].view];
+    self.title = @"Questions";
 }
 
 #pragma mark - UIBarButtonItems
@@ -68,41 +68,5 @@
         [self setupMenuBarButtonItems];
     }];
 }
-
-#pragma mark - UITableViewDataSource
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [objects count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    Question *question = objects[indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", question.title];
-    
-    return cell;
-}
-
-#pragma mark - UITableViewDelegate
-
-/*
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    TopicsViewController *detailController = [[TopicsViewController alloc] initWithID:[([objects allValues][indexPath.section])[indexPath.row] objectForKey:@"ID"]];
-    detailController.title = [NSString stringWithFormat:@"Topic %@", [([objects allValues][indexPath.section])[indexPath.row] objectForKey:@"description"]];
-    [self.navigationController pushViewController:detailController animated:YES];     
-}*/
 
 @end

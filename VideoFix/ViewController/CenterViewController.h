@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CenterViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    NSArray *objects;
-}
+@interface CenterViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIView *viewContent;
 
 @end
