@@ -24,6 +24,8 @@
 		544605E41790D673006B3438 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 544605E31790D673006B3438 /* SideMenuViewController.m */; };
 		5480D55517A03E3B0069ABAC /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 5480D55417A03E3B0069ABAC /* Question.m */; };
 		5480D55917A041CC0069ABAC /* QuestionParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5480D55817A041CC0069ABAC /* QuestionParser.m */; };
+		5480D56817A0BCBE0069ABAC /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5480D56617A0BCBE0069ABAC /* QuestionViewController.m */; };
+		5480D56917A0BCBE0069ABAC /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5480D56717A0BCBE0069ABAC /* QuestionViewController.xib */; };
 		549C2C65179A5D81001E11D4 /* TopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549C2C63179A5D81001E11D4 /* TopicsViewController.m */; };
 		549C2C66179A5D81001E11D4 /* TopicsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 549C2C64179A5D81001E11D4 /* TopicsViewController.xib */; };
 /* End PBXBuildFile section */
@@ -58,6 +60,9 @@
 		5480D55717A041CC0069ABAC /* QuestionParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionParser.h; sourceTree = "<group>"; };
 		5480D55817A041CC0069ABAC /* QuestionParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionParser.m; sourceTree = "<group>"; };
 		5480D55F17A0B53F0069ABAC /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = "Supporting Files/Constants.h"; sourceTree = "<group>"; };
+		5480D56517A0BCBE0069ABAC /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
+		5480D56617A0BCBE0069ABAC /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
+		5480D56717A0BCBE0069ABAC /* QuestionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionViewController.xib; sourceTree = "<group>"; };
 		549C2C62179A5D81001E11D4 /* TopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicsViewController.h; sourceTree = "<group>"; };
 		549C2C63179A5D81001E11D4 /* TopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicsViewController.m; sourceTree = "<group>"; };
 		549C2C64179A5D81001E11D4 /* TopicsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicsViewController.xib; sourceTree = "<group>"; };
@@ -161,6 +166,9 @@
 				544605DD1790D528006B3438 /* CenterViewController.h */,
 				544605DE1790D528006B3438 /* CenterViewController.m */,
 				544605DF1790D528006B3438 /* CenterViewController.xib */,
+				5480D56517A0BCBE0069ABAC /* QuestionViewController.h */,
+				5480D56617A0BCBE0069ABAC /* QuestionViewController.m */,
+				5480D56717A0BCBE0069ABAC /* QuestionViewController.xib */,
 				549C2C62179A5D81001E11D4 /* TopicsViewController.h */,
 				549C2C63179A5D81001E11D4 /* TopicsViewController.m */,
 				549C2C64179A5D81001E11D4 /* TopicsViewController.xib */,
@@ -253,6 +261,7 @@
 				544605C81790D49B006B3438 /* Default-568h@2x.png in Resources */,
 				544605E11790D528006B3438 /* CenterViewController.xib in Resources */,
 				549C2C66179A5D81001E11D4 /* TopicsViewController.xib in Resources */,
+				5480D56917A0BCBE0069ABAC /* QuestionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +281,7 @@
 				549C2C65179A5D81001E11D4 /* TopicsViewController.m in Sources */,
 				5480D55517A03E3B0069ABAC /* Question.m in Sources */,
 				5480D55917A041CC0069ABAC /* QuestionParser.m in Sources */,
+				5480D56817A0BCBE0069ABAC /* QuestionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
