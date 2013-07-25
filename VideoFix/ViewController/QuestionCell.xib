@@ -48,17 +48,22 @@
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="789385023"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<object class="NSColor" key="IBUIBackgroundColor" id="129422003">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MCAwAA</bytes>
+								</object>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 							<object class="IBUILabel" id="789385023">
 								<reference key="NSNextResponder" ref="261277619"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{33, 0}, {42, 21}}</string>
+								<string key="NSFrame">{{33, 0}, {209, 21}}</string>
 								<reference key="NSSuperview" ref="261277619"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="578141478"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<reference key="IBUIBackgroundColor" ref="129422003"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
@@ -75,13 +80,15 @@
 									<bytes key="NSWhite">MQA</bytes>
 								</object>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<object class="IBUIFontDescription" key="IBUIFontDescription" id="637657513">
-									<int key="type">1</int>
-									<double key="pointSize">17</double>
+								<object class="IBUIFontDescription" key="IBUIFontDescription">
+									<string key="name">AvenirNext-Medium</string>
+									<string key="family">Avenir Next</string>
+									<int key="traits">0</int>
+									<double key="pointSize">12</double>
 								</object>
-								<object class="NSFont" key="IBUIFont" id="728321939">
+								<object class="NSFont" key="IBUIFont">
 									<string key="NSName">Helvetica</string>
-									<double key="NSSize">17</double>
+									<double key="NSSize">12</double>
 									<int key="NSfFlags">16</int>
 								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
@@ -89,11 +96,12 @@
 							<object class="IBUILabel" id="578141478">
 								<reference key="NSNextResponder" ref="261277619"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{266, 0}, {42, 21}}</string>
+								<string key="NSFrame">{{250, 0}, {70, 21}}</string>
 								<reference key="NSSuperview" ref="261277619"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1011056040"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<reference key="IBUIBackgroundColor" ref="129422003"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
@@ -103,18 +111,28 @@
 								<reference key="IBUITextColor" ref="1062786018"/>
 								<reference key="IBUIHighlightedColor" ref="355541217"/>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<reference key="IBUIFontDescription" ref="637657513"/>
-								<reference key="IBUIFont" ref="728321939"/>
+								<object class="IBUIFontDescription" key="IBUIFontDescription" id="597709234">
+									<string key="name">AvenirNext-Medium</string>
+									<string key="family">Avenir Next</string>
+									<int key="traits">0</int>
+									<double key="pointSize">10</double>
+								</object>
+								<object class="NSFont" key="IBUIFont" id="125765463">
+									<string key="NSName">Helvetica</string>
+									<double key="NSSize">10</double>
+									<int key="NSfFlags">16</int>
+								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 							<object class="IBUILabel" id="750973456">
 								<reference key="NSNextResponder" ref="261277619"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{266, 20}, {42, 21}}</string>
+								<string key="NSFrame">{{250, 20}, {70, 21}}</string>
 								<reference key="NSSuperview" ref="261277619"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="96103201"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<reference key="IBUIBackgroundColor" ref="129422003"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
@@ -124,18 +142,18 @@
 								<reference key="IBUITextColor" ref="1062786018"/>
 								<reference key="IBUIHighlightedColor" ref="355541217"/>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<reference key="IBUIFontDescription" ref="637657513"/>
-								<reference key="IBUIFont" ref="728321939"/>
+								<reference key="IBUIFontDescription" ref="597709234"/>
+								<reference key="IBUIFont" ref="125765463"/>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 							<object class="IBUILabel" id="96103201">
 								<reference key="NSNextResponder" ref="261277619"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{266, 38}, {42, 21}}</string>
+								<string key="NSFrame">{{250, 38}, {70, 21}}</string>
 								<reference key="NSSuperview" ref="261277619"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<reference key="IBUIBackgroundColor" ref="129422003"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
@@ -145,18 +163,19 @@
 								<reference key="IBUITextColor" ref="1062786018"/>
 								<reference key="IBUIHighlightedColor" ref="355541217"/>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<reference key="IBUIFontDescription" ref="637657513"/>
-								<reference key="IBUIFont" ref="728321939"/>
+								<reference key="IBUIFontDescription" ref="597709234"/>
+								<reference key="IBUIFont" ref="125765463"/>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 							<object class="IBUILabel" id="1011056040">
 								<reference key="NSNextResponder" ref="261277619"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{33, 29}, {225, 40}}</string>
+								<string key="NSFrame">{{33, 29}, {209, 40}}</string>
 								<reference key="NSSuperview" ref="261277619"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="750973456"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<reference key="IBUIBackgroundColor" ref="129422003"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
@@ -166,9 +185,20 @@
 								<reference key="IBUITextColor" ref="1062786018"/>
 								<reference key="IBUIHighlightedColor" ref="355541217"/>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<reference key="IBUIFontDescription" ref="637657513"/>
-								<reference key="IBUIFont" ref="728321939"/>
+								<int key="IBUINumberOfLines">2</int>
+								<object class="IBUIFontDescription" key="IBUIFontDescription">
+									<string key="name">AvenirNext-Medium</string>
+									<string key="family">Avenir Next</string>
+									<int key="traits">0</int>
+									<double key="pointSize">14</double>
+								</object>
+								<object class="NSFont" key="IBUIFont">
+									<string key="NSName">Helvetica</string>
+									<double key="NSSize">14</double>
+									<int key="NSfFlags">16</int>
+								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+								<double key="preferredMaxLayoutWidth">209</double>
 							</object>
 						</array>
 						<string key="NSFrameSize">{320, 79}</string>
@@ -176,10 +206,7 @@
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="359125885"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
-						<object class="NSColor" key="IBUIBackgroundColor">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MCAwAA</bytes>
-						</object>
+						<reference key="IBUIBackgroundColor" ref="129422003"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">4</int>
@@ -276,8 +303,8 @@
 							<reference ref="789385023"/>
 							<reference ref="578141478"/>
 							<reference ref="750973456"/>
-							<reference ref="96103201"/>
 							<reference ref="1011056040"/>
+							<reference ref="96103201"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
