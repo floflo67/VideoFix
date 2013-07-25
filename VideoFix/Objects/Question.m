@@ -28,7 +28,6 @@
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
         [dateFormat setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
         self.timestamp = [dateFormat dateFromString:date];
-        NSLog(@"date: %@, timestamp: %@", date, self.timestamp);
     }
     return self;
 }
