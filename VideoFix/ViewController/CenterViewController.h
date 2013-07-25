@@ -10,6 +10,4 @@
 
 @interface CenterViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIView *viewContent;
-
 @end

@@ -29,7 +29,7 @@
 
 - (void)loadQuestionsView
 {
-    [self.viewContent addSubview:[QuestionsViewController getSingleton].view];
+    [self.view addSubview:[QuestionsViewController getSingleton].view];
     self.title = @"Questions";
 }
 
