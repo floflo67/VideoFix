@@ -26,6 +26,8 @@
 		5480D55917A041CC0069ABAC /* QuestionParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5480D55817A041CC0069ABAC /* QuestionParser.m */; };
 		5480D56817A0BCBE0069ABAC /* QuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5480D56617A0BCBE0069ABAC /* QuestionsViewController.m */; };
 		5480D56917A0BCBE0069ABAC /* QuestionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5480D56717A0BCBE0069ABAC /* QuestionsViewController.xib */; };
+		5480D56C17A0C55B0069ABAC /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5480D56B17A0C55B0069ABAC /* QuestionCell.m */; };
+		5480D56E17A0C5700069ABAC /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5480D56D17A0C56F0069ABAC /* QuestionCell.xib */; };
 		549C2C65179A5D81001E11D4 /* TopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549C2C63179A5D81001E11D4 /* TopicsViewController.m */; };
 		549C2C66179A5D81001E11D4 /* TopicsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 549C2C64179A5D81001E11D4 /* TopicsViewController.xib */; };
 /* End PBXBuildFile section */
@@ -63,6 +65,9 @@
 		5480D56517A0BCBE0069ABAC /* QuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsViewController.h; sourceTree = "<group>"; };
 		5480D56617A0BCBE0069ABAC /* QuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsViewController.m; sourceTree = "<group>"; };
 		5480D56717A0BCBE0069ABAC /* QuestionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionsViewController.xib; sourceTree = "<group>"; };
+		5480D56A17A0C55B0069ABAC /* QuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCell.h; sourceTree = "<group>"; };
+		5480D56B17A0C55B0069ABAC /* QuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCell.m; sourceTree = "<group>"; };
+		5480D56D17A0C56F0069ABAC /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
 		549C2C62179A5D81001E11D4 /* TopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicsViewController.h; sourceTree = "<group>"; };
 		549C2C63179A5D81001E11D4 /* TopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicsViewController.m; sourceTree = "<group>"; };
 		549C2C64179A5D81001E11D4 /* TopicsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicsViewController.xib; sourceTree = "<group>"; };
@@ -169,6 +174,9 @@
 				5480D56517A0BCBE0069ABAC /* QuestionsViewController.h */,
 				5480D56617A0BCBE0069ABAC /* QuestionsViewController.m */,
 				5480D56717A0BCBE0069ABAC /* QuestionsViewController.xib */,
+				5480D56A17A0C55B0069ABAC /* QuestionCell.h */,
+				5480D56B17A0C55B0069ABAC /* QuestionCell.m */,
+				5480D56D17A0C56F0069ABAC /* QuestionCell.xib */,
 				549C2C62179A5D81001E11D4 /* TopicsViewController.h */,
 				549C2C63179A5D81001E11D4 /* TopicsViewController.m */,
 				549C2C64179A5D81001E11D4 /* TopicsViewController.xib */,
@@ -262,6 +270,7 @@
 				544605E11790D528006B3438 /* CenterViewController.xib in Resources */,
 				549C2C66179A5D81001E11D4 /* TopicsViewController.xib in Resources */,
 				5480D56917A0BCBE0069ABAC /* QuestionsViewController.xib in Resources */,
+				5480D56E17A0C5700069ABAC /* QuestionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +291,7 @@
 				5480D55517A03E3B0069ABAC /* Question.m in Sources */,
 				5480D55917A041CC0069ABAC /* QuestionParser.m in Sources */,
 				5480D56817A0BCBE0069ABAC /* QuestionsViewController.m in Sources */,
+				5480D56C17A0C55B0069ABAC /* QuestionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
