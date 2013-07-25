@@ -9,6 +9,7 @@
 #import "QuestionsViewController.h"
 #import "Question.h"
 #import "Requests.h"
+#import "QuestionCell.h"
 
 @implementation QuestionsViewController
 
@@ -51,13 +52,27 @@ static QuestionsViewController *sharedSingleton = nil;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"QuestionCell";    
+    QuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"QuestionCell" owner:self options:nil];
+        cell = topLevelObjects[0];
     }
     Question *question = objects[indexPath.row];
+    cell.labelAnswers.text = [NSString stringWithFormat:@"%i Answers", question.numberAnswers];
+    cell.labelThanks.text = [NSString stringWithFormat:@"%i Thanks", question.numberThanks];
+    cell.labelViews.text = [NSString stringWithFormat:@"%i Views", question.numberViews];
+    cell.labelTitle.text = question.title;
+    
+    NSDate* date = [NSDate new];
+    NSTimeInterval distanceBetweenDates = [date timeIntervalSinceDate:question.timestamp];
+    NSInteger minutesBetweenDates = distanceBetweenDates / 60;
+    
+    cell.labelTimeFrame = [NSString stringWithFormat:@"Asked %i minutes ago by %@", minutesBetweenDates, question.firstNameUser];
+    
+    UIImage *img = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:question.thumbnail]]];
+    cell.imageBackground.image = img;
+    
     cell.textLabel.text = [NSString stringWithFormat:@"%@", question.title];
     
     return cell;
