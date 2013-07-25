@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Florian Reiss. All rights reserved.
 //
 
-#import "QuestionViewController.h"
+#import "QuestionsViewController.h"
 #import "Question.h"
 #import "Requests.h"
 
-@implementation QuestionViewController
+@implementation QuestionsViewController
 
-static QuestionViewController *sharedSingleton = nil;
-+ (QuestionViewController*)getSingleton
+static QuestionsViewController *sharedSingleton = nil;
++ (QuestionsViewController*)getSingleton
 {
     if (sharedSingleton != nil)
         return sharedSingleton;

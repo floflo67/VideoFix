@@ -9,7 +9,7 @@
 #import "CenterViewController.h"
 #import "MFSideMenuContainerViewController.h"
 #import "TopicsViewController.h"
-#import "QuestionViewController.h"
+#import "QuestionsViewController.h"
 
 @implementation CenterViewController
 
@@ -29,7 +29,7 @@
 
 - (void)loadQuestionsView
 {
-    [self.viewContent addSubview:[QuestionViewController getSingleton].view];
+    [self.viewContent addSubview:[QuestionsViewController getSingleton].view];
     self.title = @"Questions";
 }
 

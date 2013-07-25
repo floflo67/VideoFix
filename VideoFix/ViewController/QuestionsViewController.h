@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuestionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface QuestionsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     NSArray *objects;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-+(QuestionViewController*)getSingleton;
++(QuestionsViewController*)getSingleton;
 
 @end
