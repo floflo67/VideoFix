@@ -20,6 +20,7 @@
 @property (nonatomic) NSInteger numberViews;
 @property (nonatomic) NSInteger numberThanks;
 @property (nonatomic) NSInteger numberAnswers;
+@property (nonatomic, strong) UIImage *imageThumbnail;
 
 -(id)initWithDict:(NSDictionary*)dict;
 
