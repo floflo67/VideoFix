@@ -13,9 +13,7 @@
 
 - (NSArray*)getQuestionsFromURL:(NSString *)path
 {
-    path = @"http://sebastien-wickert.com/VF/getMostRecentQuestions.php?token=f9fde950aafbb8a6b32a6a0c33029870";
     NSURL *url = [NSURL URLWithString:path];
-    //NSURL *url = [NSURL fileURLWithPath:path];
     if (url != nil) {
         NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
         parser.delegate = self;

@@ -13,7 +13,7 @@
 
 + (NSArray*)getListQuestions
 {
-    return [[[QuestionParser alloc] init] getQuestionsFromURL:@""];
+    return [[[QuestionParser alloc] init] getQuestionsFromURL:VF_API_URL];
 }
 
 + (NSDictionary*)getListSubjects
