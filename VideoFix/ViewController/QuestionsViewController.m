@@ -10,6 +10,7 @@
 #import "Question.h"
 #import "Requests.h"
 #import "QuestionCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation QuestionsViewController
 
@@ -70,9 +71,14 @@ static QuestionsViewController *sharedSingleton = nil;
     if(timeInterval > 60) {
         timeInterval /= 60;
         timeFormat = @"hours";
+        if(timeInterval > 24) {
+            timeInterval /= 24;
+            timeFormat = @"days";
+        }
     }
     
     cell.labelTimeFrame.text = [NSString stringWithFormat:@"Asked %i %@ ago by %@", timeInterval, timeFormat, question.firstNameUser];
+    //[cell.imageView setImageWithURL:[NSURL URLWithString:@"http://www.domain.com/path/to/image.jpg"] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     //cell.imageBackground.image = question.imageThumbnail;
     
     return cell;
