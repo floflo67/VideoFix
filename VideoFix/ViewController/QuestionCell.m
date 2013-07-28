@@ -10,4 +10,19 @@
 
 @implementation QuestionCell
 
+- (void)loadBackground:(NSString*)imagePath
+{
+	NSData* imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imagePath]];
+	[self performSelectorOnMainThread:@selector(assignImageToBackground:) withObject:imageData waitUntilDone:NO];
+}
+
+- (void)assignImageToBackground:(NSData*)imageData
+{
+	self.imageBackground.image = [UIImage imageWithData:imageData];
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:2];
+    [UIView setAnimationDelegate:self];
+    [UIView commitAnimations];
+}
+
 @end
