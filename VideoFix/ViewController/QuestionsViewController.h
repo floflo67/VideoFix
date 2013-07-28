@@ -10,6 +10,7 @@
 
 @interface QuestionsViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> {
     NSArray *objects;
+    NSOperationQueue *queue;
 }
 
 +(QuestionsViewController*)getSingleton;

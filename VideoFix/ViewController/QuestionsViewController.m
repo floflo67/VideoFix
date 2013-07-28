@@ -53,7 +53,10 @@ static QuestionsViewController *sharedSingleton = nil;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"QuestionCell";    
+    static NSString *CellIdentifier = @"QuestionCell";
+    if(!queue)
+        queue = [NSOperationQueue new];
+    
     QuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"QuestionCell" owner:self options:nil];
@@ -78,8 +81,8 @@ static QuestionsViewController *sharedSingleton = nil;
     }
     
     cell.labelTimeFrame.text = [NSString stringWithFormat:@"Asked %i %@ ago by %@", timeInterval, timeFormat, question.firstNameUser];
-    //[cell.imageView setImageWithURL:[NSURL URLWithString:@"http://www.domain.com/path/to/image.jpg"] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-    //cell.imageBackground.image = question.imageThumbnail;
+    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:cell selector:@selector(loadBackground:) object:question.thumbnail];
+    [queue addOperation:operation];
     
     return cell;
 }
