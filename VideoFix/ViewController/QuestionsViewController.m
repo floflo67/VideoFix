@@ -10,7 +10,6 @@
 #import "Question.h"
 #import "Requests.h"
 #import "QuestionCell.h"
-#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation QuestionsViewController
 
