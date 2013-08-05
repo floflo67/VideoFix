@@ -9,7 +9,7 @@
 #ifndef VideoFix_Constants_h
 #define VideoFix_Constants_h
 
-#define VF_API_URL @("http://sebastien-wickert.com/VF/getMostRecentQuestions.php?token=f9fde950aafbb8a6b32a6a0c33029870")
+#define VF_API_URL @("http://sebastien-wickert.com/VF/getMostRecentQuestions.php")
 
 
 #endif

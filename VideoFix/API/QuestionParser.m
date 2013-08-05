@@ -14,12 +14,56 @@
 - (NSArray*)getQuestionsFromURL:(NSString *)path
 {
     NSURL *url = [NSURL URLWithString:path];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    
+    NSMutableDictionary* parameters = [NSMutableDictionary dictionary];
+    [parameters setValue:@"f9fde950aafbb8a6b32a6a0c33029870" forKey:@"token"];
+    NSString* normalizedRequestParameters = [self normalizeParametersInDictionary:parameters];
+    NSData* requestData = [normalizedRequestParameters dataUsingEncoding:NSUTF8StringEncoding];
+    
+    [request setHTTPBody:requestData];
+    NSURLResponse *response;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    
     if (url != nil) {
-        NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+        NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
         parser.delegate = self;
         [parser parse];
     }
     return self.listQuestions;
+}
+
+#pragma mark - Custom function
+
+- (NSString*)normalizeParametersInDictionary:(NSDictionary*)dict
+{
+    NSMutableString* normalizedRequestParameters = [NSMutableString string];
+    for (NSString* key in [[dict allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)])
+    {
+        if ([normalizedRequestParameters length] != 0) {
+            [normalizedRequestParameters appendString: @"&"];
+        }
+        
+        [normalizedRequestParameters appendString:key];
+        [normalizedRequestParameters appendString:@"="];
+        if(![key isEqualToString:@"deviceId"])
+            [normalizedRequestParameters appendString:[self _formEncodeString:[dict objectForKey:key]]];
+        else {
+            NSMutableString *deviceID = [NSString stringWithFormat:@"%@",[dict objectForKey:@"deviceId"]];
+            deviceID = (NSMutableString*)[deviceID substringFromIndex:29];
+            [normalizedRequestParameters appendString:deviceID];
+        }
+    }
+    
+    return normalizedRequestParameters;
+}
+
+- (NSString*)_formEncodeString:(NSString*)string
+{
+	NSString* encoded = (NSString*) CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,(CFStringRef) string, NULL, CFSTR("!*'();:@&=+$,/?%#[]"), kCFStringEncodingUTF8));
+	return encoded;
 }
 
 #pragma mark - NSXMLParser delegate
