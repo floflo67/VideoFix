@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuestionsViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> {
-    NSArray *objects;
+@interface QuestionsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     NSOperationQueue *queue;
 }
 

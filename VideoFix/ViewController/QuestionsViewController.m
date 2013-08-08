@@ -11,6 +11,13 @@
 #import "Requests.h"
 #import "QuestionCell.h"
 
+@interface QuestionsViewController()
+@property (nonatomic, strong) NSMutableArray *cells;
+@property (nonatomic, strong) NSArray *objects;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@end
+
+
 @implementation QuestionsViewController
 
 static QuestionsViewController *sharedSingleton = nil;
@@ -29,8 +36,7 @@ static QuestionsViewController *sharedSingleton = nil;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if(!objects)
-        objects = [[NSArray alloc] initWithArray:[Requests getListQuestions]];
+    self.objects = [Requests getListQuestions];
 }
 
 #pragma mark - UITableViewDataSource
@@ -47,7 +53,7 @@ static QuestionsViewController *sharedSingleton = nil;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [objects count];
+    return [self.objects count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,30 +67,76 @@ static QuestionsViewController *sharedSingleton = nil;
         NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"QuestionCell" owner:self options:nil];
         cell = topLevelObjects[0];
     }
-    Question *question = objects[indexPath.row];
-    cell.labelAnswers.text = [NSString stringWithFormat:@"%i Answers", question.numberAnswers];
-    cell.labelThanks.text = [NSString stringWithFormat:@"%i Thanks", question.numberThanks];
-    cell.labelViews.text = [NSString stringWithFormat:@"%i Views", question.numberViews];
-    cell.labelTitle.text = question.title;
-
-    NSInteger timeInterval = [[NSDate new] timeIntervalSinceDate:question.timestamp] / 60;
-    NSString *timeFormat = @"minutes";
     
-    if(timeInterval > 60) {
-        timeInterval /= 60;
-        timeFormat = @"hours";
-        if(timeInterval > 24) {
-            timeInterval /= 24;
-            timeFormat = @"days";
+    @try {
+        cell = [self.cells objectAtIndex:indexPath.row];
+    }
+    @catch (NSException * e) {
+        
+        Question *question = self.objects[indexPath.row];
+        cell.labelAnswers.text = [NSString stringWithFormat:@"%i Answers", question.numberAnswers];
+        cell.labelThanks.text = [NSString stringWithFormat:@"%i Thanks", question.numberThanks];
+        cell.labelViews.text = [NSString stringWithFormat:@"%i Views", question.numberViews];
+        cell.labelTitle.text = question.title;
+        
+        NSInteger timeInterval = [[NSDate new] timeIntervalSinceDate:question.timestamp] / 60;
+        NSString *timeFormat = @"minutes";
+        
+        if(timeInterval > 60) {
+            timeInterval /= 60;
+            timeFormat = @"hours";
+            if(timeInterval > 24) {
+                timeInterval /= 24;
+                timeFormat = @"days";
+            }
         }
+        
+        cell.labelTimeFrame.text = [NSString stringWithFormat:@"Asked %i %@ ago by %@", timeInterval, timeFormat, question.firstNameUser];
+        NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:cell selector:@selector(loadBackground:) object:question.thumbnail];
+        [queue addOperation:operation];
+        [self.cells insertObject:cell atIndex:indexPath.row];
+        
+    }
+    /*@finally {
+        //something that you want to do wether the exception is thrown or not.
     }
     
-    cell.labelTimeFrame.text = [NSString stringWithFormat:@"Asked %i %@ ago by %@", timeInterval, timeFormat, question.firstNameUser];
-    NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:cell selector:@selector(loadBackground:) object:question.thumbnail];
-    [queue addOperation:operation];
-    
+    if(![self.cells objectAtIndex:indexPath.row]) {
+        Question *question = self.objects[indexPath.row];
+        cell.labelAnswers.text = [NSString stringWithFormat:@"%i Answers", question.numberAnswers];
+        cell.labelThanks.text = [NSString stringWithFormat:@"%i Thanks", question.numberThanks];
+        cell.labelViews.text = [NSString stringWithFormat:@"%i Views", question.numberViews];
+        cell.labelTitle.text = question.title;
+        
+        NSInteger timeInterval = [[NSDate new] timeIntervalSinceDate:question.timestamp] / 60;
+        NSString *timeFormat = @"minutes";
+        
+        if(timeInterval > 60) {
+            timeInterval /= 60;
+            timeFormat = @"hours";
+            if(timeInterval > 24) {
+                timeInterval /= 24;
+                timeFormat = @"days";
+            }
+        }
+        
+        cell.labelTimeFrame.text = [NSString stringWithFormat:@"Asked %i %@ ago by %@", timeInterval, timeFormat, question.firstNameUser];
+        NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:cell selector:@selector(loadBackground:) object:question.thumbnail];
+        [queue addOperation:operation];
+        [self.cells insertObject:cell atIndex:indexPath.row];
+    }
+    else
+        cell = [self.cells objectAtIndex:indexPath.row];*/
     return cell;
 }
+
+#pragma mark - Button events
+
+- (IBAction)askquestionButton:(UIButton *)sender
+{
+    
+}
+
 
 #pragma mark - UITableViewDelegate
 
@@ -95,5 +147,21 @@ static QuestionsViewController *sharedSingleton = nil;
  detailController.title = [NSString stringWithFormat:@"Topic %@", [([objects allValues][indexPath.section])[indexPath.row] objectForKey:@"description"]];
  [self.navigationController pushViewController:detailController animated:YES];
  }*/
+
+#pragma mark - getter and setter
+
+- (NSMutableArray*)cells
+{
+    if(!_cells)
+        _cells = [[NSMutableArray alloc] initWithCapacity:[self.objects count]];
+    return _cells;    
+}
+
+- (NSArray *)objects
+{
+    if(!_objects)
+        _objects = [[NSArray alloc] init];
+    return _objects;
+}
 
 @end
