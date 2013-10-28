@@ -6,7 +6,11 @@
 //  Copyright (c) 2013 Florian Reiss. All rights reserved.
 //
 
+#import <MobileCoreServices/MobileCoreServices.h>
+#import "AppDelegate.h"
+#import "CenterViewController.h"
 #import "QuestionsViewController.h"
+#import "AskQuestionViewController.h"
 #import "Question.h"
 #import "Requests.h"
 #import "QuestionCell.h"
@@ -134,7 +138,15 @@ static QuestionsViewController *sharedSingleton = nil;
 
 - (IBAction)askquestionButton:(UIButton *)sender
 {
-    
+    /*UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    picker.videoQuality = UIImagePickerControllerQualityTypeMedium;
+    picker.videoMaximumDuration = 20;
+    picker.mediaTypes = @[(NSString*)kUTTypeMovie];
+    picker.view.backgroundColor = [UIColor clearColor];
+    [self.navigationController presentViewController:picker animated:YES completion:nil];*/
+    [self.navigationController pushViewController:[[AskQuestionViewController alloc] init] animated:YES];
 }
 
 
@@ -162,6 +174,11 @@ static QuestionsViewController *sharedSingleton = nil;
     if(!_objects)
         _objects = [[NSArray alloc] init];
     return _objects;
+}
+
+- (UINavigationController*)navigationController
+{
+    return ((AppDelegate*)[UIApplication sharedApplication].delegate).viewController.navigationController;
 }
 
 @end

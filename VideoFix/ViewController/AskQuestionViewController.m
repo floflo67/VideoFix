@@ -6,7 +6,9 @@
 //  Copyright (c) 2013 Florian Reiss. All rights reserved.
 //
 
+#import <MobileCoreServices/MobileCoreServices.h>
 #import "AskQuestionViewController.h"
+#import "AppDelegate.h"
 
 @interface AskQuestionViewController ()
 
@@ -14,25 +16,37 @@
 
 @implementation AskQuestionViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.title = @"Ask Question";
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.view.frame = CGRectMake(0, 0, 320, 300);
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    picker.videoQuality = UIImagePickerControllerQualityTypeMedium;
+    picker.videoMaximumDuration = 20;
+    picker.mediaTypes = @[(NSString*)kUTTypeMovie, (NSString*)kUTTypeImage];
+    picker.view.backgroundColor = [UIColor clearColor];
+    picker.delegate = self;
+    [self.view addSubview:picker.view];
+    [picker viewWillAppear:YES];
+    [picker viewDidAppear:YES];
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - ImagePicker delegate
+
+- (void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary*)info
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    [picker.view removeFromSuperview];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController*)picker
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    [picker.view removeFromSuperview];
 }
 
 @end

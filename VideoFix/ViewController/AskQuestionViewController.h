@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AskQuestionViewController : UIImagePickerController
+@interface AskQuestionViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+-(void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary*)info;
+-(void)imagePickerControllerDidCancel:(UIImagePickerController*)picker;
 
 @end

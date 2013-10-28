@@ -39,12 +39,12 @@
 					<object class="IBUITableView" id="797795783">
 						<reference key="NSNextResponder" ref="938820805"/>
 						<int key="NSvFlags">272</int>
-						<string key="NSFrameSize">{320, 416}</string>
+						<string key="NSFrameSize">{320, 373}</string>
 						<reference key="NSSuperview" ref="938820805"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="890492686"/>
+						<reference key="NSNextKeyView" ref="490449815"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<object class="NSColor" key="IBUIBackgroundColor" id="626761932">
+						<object class="NSColor" key="IBUIBackgroundColor" id="210102857">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
 						</object>
@@ -58,13 +58,12 @@
 						<float key="IBUISectionHeaderHeight">22</float>
 						<float key="IBUISectionFooterHeight">22</float>
 					</object>
-					<object class="IBUIButton" id="890492686">
+					<object class="IBUIButton" id="490449815">
 						<reference key="NSNextResponder" ref="938820805"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{0, 373}, {320, 44}}</string>
 						<reference key="NSSuperview" ref="938820805"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -72,7 +71,7 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">Ask question</string>
-						<reference key="IBUIHighlightedTitleColor" ref="626761932"/>
+						<reference key="IBUIHighlightedTitleColor" ref="210102857"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
@@ -148,7 +147,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">askquestionButton:</string>
-						<reference key="source" ref="890492686"/>
+						<reference key="source" ref="490449815"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">1</int>
 					</object>
@@ -179,7 +178,7 @@
 						<reference key="object" ref="938820805"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="797795783"/>
-							<reference ref="890492686"/>
+							<reference ref="490449815"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -190,7 +189,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">17</int>
-						<reference key="object" ref="890492686"/>
+						<reference key="object" ref="490449815"/>
 						<reference key="parent" ref="938820805"/>
 					</object>
 				</array>
