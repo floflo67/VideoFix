@@ -13,14 +13,16 @@
 
 @implementation AppDelegate
 
-- (CenterViewController*)centerViewController
+- (CenterViewController*)viewController
 {
-    return [[CenterViewController alloc] initWithNibName:@"CenterViewController" bundle:nil];
+    if(!_viewController)
+        _viewController = [[CenterViewController alloc] initWithNibName:@"CenterViewController" bundle:nil];
+    return _viewController;
 }
 
 - (UINavigationController *)navigationController
 {
-    return [[UINavigationController alloc] initWithRootViewController:[self centerViewController]];
+    return [[UINavigationController alloc] initWithRootViewController:self.viewController];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
