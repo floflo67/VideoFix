@@ -14,3 +14,13 @@ VideoFix.xcodeproj/xcuserdata/sebastienwickert.xcuserdatad/xcdebugger/Breakpoint
 VideoFix.xcodeproj/project.xcworkspace/xcuserdata/sebastienwickert.xcuserdatad/UserInterfaceState.xcuserstate
 
 .DS_Store
+
+Certificats/Certificates.p12
+
+Certificats/CertificatesDev.p12
+
+Certificats/iOS_Team_Provisioning_Profile_.mobileprovision
+
+Certificats/ios_development.cer
+
+Certificats/VF13.mobileprovision
