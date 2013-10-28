@@ -31,6 +31,7 @@
 		5480D56E17A0C5700069ABAC /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5480D56D17A0C56F0069ABAC /* QuestionCell.xib */; };
 		5490BE0217B32B820031F61E /* AskQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5490BE0017B32B820031F61E /* AskQuestionViewController.m */; };
 		5490BE0317B32B820031F61E /* AskQuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5490BE0117B32B820031F61E /* AskQuestionViewController.xib */; };
+		5490BE0517B333110031F61E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5490BE0417B333110031F61E /* MobileCoreServices.framework */; };
 		549C2C65179A5D81001E11D4 /* TopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 549C2C63179A5D81001E11D4 /* TopicsViewController.m */; };
 		549C2C66179A5D81001E11D4 /* TopicsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 549C2C64179A5D81001E11D4 /* TopicsViewController.xib */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		5490BDFF17B32B820031F61E /* AskQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskQuestionViewController.h; sourceTree = "<group>"; };
 		5490BE0017B32B820031F61E /* AskQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskQuestionViewController.m; sourceTree = "<group>"; };
 		5490BE0117B32B820031F61E /* AskQuestionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AskQuestionViewController.xib; sourceTree = "<group>"; };
+		5490BE0417B333110031F61E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		549C2C62179A5D81001E11D4 /* TopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicsViewController.h; sourceTree = "<group>"; };
 		549C2C63179A5D81001E11D4 /* TopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicsViewController.m; sourceTree = "<group>"; };
 		549C2C64179A5D81001E11D4 /* TopicsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicsViewController.xib; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5490BE0517B333110031F61E /* MobileCoreServices.framework in Frameworks */,
 				29DEE29317A5BFBA00DD90C1 /* ImageIO.framework in Frameworks */,
 				544605DC1790D4E6006B3438 /* QuartzCore.framework in Frameworks */,
 				544605B21790D49B006B3438 /* UIKit.framework in Frameworks */,
@@ -132,6 +135,7 @@
 				544605B31790D49B006B3438 /* Foundation.framework */,
 				544605DB1790D4E6006B3438 /* QuartzCore.framework */,
 				29DEE29217A5BFBA00DD90C1 /* ImageIO.framework */,
+				5490BE0417B333110031F61E /* MobileCoreServices.framework */,
 				544605B11790D49B006B3438 /* UIKit.framework */,
 			);
 			name = Frameworks;
